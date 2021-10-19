@@ -1,3 +1,8 @@
+'''
+Not correct. 
+Check mistakes.
+'''
+
 from itertools import permutations
 
 
@@ -32,10 +37,10 @@ if __name__ == "__main__":
     obs = []
     count = 0
 
-    for _ in range(8):
+    for _ in range(8):      # main input grid
         grid.append(input().strip())
 
-    for i in range(8):
+    for i in range(8):          # populating the obstacles with respective indices
         for j in range(8):
             if grid[i][j] == "*":
                 obs.append((i,j))
@@ -44,15 +49,15 @@ if __name__ == "__main__":
 
     pos = [0,1,2,3,4,5,6,7]
 
-    all_conf = permutations(pos)
+    all_conf = permutations(pos)        # calculating all permutations
 
-    for elem in all_conf:
+    for elem in all_conf:               # looping through all permutations
         for  i in range(len(elem)):
-            if isValid(i, elem[i], obs, elem):
+            if isValid(i, elem[i], obs, elem):      # if position in particular permutation is valid
                 continue
             else:
                 break
-        else:
+        else:                                       # if loop completes successfully, increase the counter
             count += 1
 
             
