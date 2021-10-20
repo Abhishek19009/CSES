@@ -1,3 +1,6 @@
+# There is syntax error at line 40.
+
+
 import numpy as np
 '''
 There are 48 characters in input string.
